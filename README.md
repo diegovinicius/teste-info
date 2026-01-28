@@ -3,21 +3,20 @@
 Projeto de back-end desenvolvido em Node.js e SQLite usando IA para acelerar o processo
 
 ### CLIENT
-Responsável pelo projeto angular com a comunicação com o server
+Responsável pelo projeto angular com a comunicação com o server  
+Testes criados com Karma e Jasmine
 
 ### Rodando os projetos
 
-com o terminal em suas respectivas pastas.
+Com o terminal em suas respectivas pastas.
 
 ````js
 BACK
-
-// rodar o projeto
-npm start 
-// executar os testes
-npm test
+npm start // rodar o projeto
+npm test  // executar os testes
 
 FRONT
-ng serve --proxy-config proxy.conf.json
+ng serve  // rodar o projeto
+ng test   // executar os testes
 
 ````
