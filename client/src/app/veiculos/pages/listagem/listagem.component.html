@@ -1,0 +1,53 @@
+<div class="row">
+  <div class="col-md-8">
+    <h3 class="mb-3">Veículos</h3>
+  </div>
+  <div class="col-md-4 text-end">
+      <button class="btn btn-sm btn-outline-primary" (click)="load()">
+        Recarregar
+      </button>
+      &nbsp;
+      <a class="btn btn-sm btn-outline-primary" [routerLink]="['../cadastrar']">
+        Cadastrar
+      </a>
+      <span *ngIf="loading" class="text-muted"> Carregando...</span>
+  </div>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped align-middle">
+    <thead>
+      <tr>
+        <th>Placa</th>
+        <th>Modelo</th>
+        <th>Marca</th>
+        <th>Ano</th>
+        <th class="text-end">Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let c of veiculos">
+        <td>{{ c.placa }}</td>
+        <td>{{ c.modelo }}</td>
+        <td>{{ c.marca }}</td>
+        <td>{{ c.ano }}</td>
+        <td class="text-end">
+          <a
+            class="btn btn-sm btn-warning me-2"
+            [routerLink]="['../editar', c.id]"
+          >
+            Editar
+          </a>
+          <button class="btn btn-sm btn-danger" (click)="remove(c.id)">
+            Excluir
+          </button>
+        </td>
+      </tr>
+      <tr *ngIf="!loading && veiculos.length === 0">
+        <td colspan="6" class="text-center text-muted py-4">
+          Nenhum veiculo cadastrado.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
