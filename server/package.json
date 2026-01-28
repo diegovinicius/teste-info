@@ -1,0 +1,20 @@
+{
+  "name": "api-veiculos-sqlite",
+  "version": "1.0.0",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "mocha"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "sequelize": "^6.37.1",
+    "sqlite3": "^5.0.2"
+  },
+  "devDependencies": {
+    "chai": "^4.4.1",
+    "mocha": "^10.4.0",
+    "supertest": "^7.2.2"
+  }
+}
