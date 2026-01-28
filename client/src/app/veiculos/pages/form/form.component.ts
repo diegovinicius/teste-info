@@ -96,6 +96,7 @@ export class FormComponent implements OnInit {
   }
 
   public resetForm(): void {
+    this.titulo = "Cadastrar Veículo";
     this.form.reset({
       id: null,
       placa: '',
