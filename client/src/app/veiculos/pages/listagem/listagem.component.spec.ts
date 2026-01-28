@@ -34,4 +34,15 @@ describe('ListagemComponent', () => {
     expect(serviceSpy.getAll).toHaveBeenCalled();
     expect(component.veiculos.length).toBe(1);
   });
+
+  it('deve chamar delete ao remover', () => {
+    serviceSpy.getAll.and.returnValue(of([]));
+    serviceSpy.delete.and.returnValue(of(void 0));
+
+    fixture.detectChanges();
+
+    component.remove(5);
+
+    expect(serviceSpy.delete).toHaveBeenCalledWith(5);
+  });
 });
